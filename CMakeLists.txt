@@ -734,18 +734,6 @@ if (NOT CMAKE_VERSION VERSION_LESS 2.8.8)	# CMakePackageConfigHelpers is support
 	install(EXPORT ${export_name} DESTINATION "lib/cmake/cryptopp")
 endif ()
 
-# Tests
-if (BUILD_TESTING)
-	install(TARGETS cryptest DESTINATION ${CMAKE_INSTALL_BINDIR})
-	install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/TestData DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/cryptopp)
-	install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/TestVectors DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/cryptopp)
-endif ()
-
-# Documentation
-if (BUILD_DOCUMENTATION)
-	install(DIRECTORY "${out_source_DOCS_DIR}" DESTINATION ${CMAKE_INSTALL_DOCDIR})
-endif ()
-
 # Print a configuration summary. We want CXX and CXXFLAGS, but they are not includd in ALL.
 if (NOT CMAKE_VERSION VERSION_LESS 3.0.2)
 	if (CRYPTOPP_I386)
